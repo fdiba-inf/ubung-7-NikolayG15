@@ -10,25 +10,23 @@ public class RecursivePrimePrinter {
 
     public static void printPrimes(int n) {
         // Implement recursive method
-        if (n==0){
-          return;
+        for( int i = n; i > 0;i--){
+          if (isPrime(i)){
+            System.out.println(i);
+          }
         }
-        if(isPrime(n)){
-          System.out.println(n);
-        }
-        printPrimes(n-1);
     }
 
     public static boolean isPrime(int n) {
         // Implement method
-        return false;
-        int divider = 2;
-        while (divider < n) {
-          if (n % divider == 0) {
-             return false;
-          }
-          divider++;
-        }
-        return true;
+      
+      boolean del = true;
+       for (int i = 2; i < n; i++){
+         if (n %i == 0){
+           del = false;
+           break;
+         }
+       }
+        return del;
     }
 }
